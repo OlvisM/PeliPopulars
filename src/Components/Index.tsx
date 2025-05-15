@@ -28,17 +28,12 @@ function App() {
 
   return (
     <>
-      <article className="container mx-auto p-30">
-        <div className="justify-center items-center text-center mb-4">
-          <h1 className="text-7xl font-extrabold ">
-            Películas Populares del momento
-          </h1>
-        </div>
-        <main className="py-40">
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center h-50 ">
+      <section className="mt-">
+        <main className="flex flex-col items-center justify-center p-4 mx-auto bg-white shadow-2xl w-full h-full rounded-2xl">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center items-center w-full h-full">
             {peliculas.map((pelicula) => (
               <li key={pelicula.id}>
-                <div className="relative group w-[300px] h-[450px] overflow-hidden rounded shadow-lg">
+                <div className="relative group">
                   <img
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     src={`https://image.tmdb.org/t/p/w200${pelicula.poster_path}`}
@@ -58,7 +53,7 @@ function App() {
             ))}
           </ul>
         </main>
-      </article>
+      </section>
     </>
   );
 }
